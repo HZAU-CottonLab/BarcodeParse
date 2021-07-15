@@ -4,7 +4,7 @@
  * @Author: zpliu
  * @Date: 2021-07-15 21:41:28
  * @LastEditors: zpliu
- * @LastEditTime: 2021-07-15 21:49:09
+ * @LastEditTime: 2021-07-15 21:53:37
  * @@param: 
 -->
 # BarcodeParse
@@ -13,11 +13,11 @@ Parsing the barcode sequences in CRISPR-Case9 system  using Next-generation sequ
 
 ### paraments:
 
-    + `-R1` R1 fastq sequence file (gizped or uncompressed)
-    + `-R2` R2 fastq sequence file (gizped or uncompressed)
-    + `-verctor5` verctor sequence adjacent to 5' barcode (default='TATAAGCGAAAGAAGCATCAGATGGGCAAACAAAGCACCAGTGGTCTAGTGGTAGAATAGTACCCTGCCACGGTACAGACCCGGGTTCGATTCCCGGCTGGTGCA')
-    + `-verctor3` verctor sequence adjacent to 3' barcode (default='TAAAATAAGGCTAGTCCGTTATCAACTTGAAAAAGTGGCACCGAGTCGGTGCTTTTTTGTTTTAGAGCTAGAAATAGCAAGTTAAAATAAGGCTAGTCCGTTTTTAGCGCGTGCATGCCTGCAGGTCCACAAATTCGGGTC')
-    + `-o` out put file
+1. `-R1` R1 fastq sequence file (gizped or uncompressed)
+2. `-R2` R2 fastq sequence file (gizped or uncompressed)
+3. `-verctor5` verctor sequence adjacent to 5' barcode (default='TATAAGCGAAAGAAGCATCAGATGGGCAAACAAAGCACCAGTGGTCTAGTGGTAGAATAGTACCCTGCCACGGTACAGACCCGGGTTCGATTCCCGGCTGGTGCA')
+4. `-verctor3` verctor sequence adjacent to 3' barcode (default='TAAAATAAGGCTAGTCCGTTATCAACTTGAAAAAGTGGCACCGAGTCGGTGCTTTTTTGTTTTAGAGCTAGAAATAGCAAGTTAAAATAAGGCTAGTCCGTTTTTAGCGCGTGCATGCCTGCAGGTCCACAAATTCGGGTC')
+5. `-o` out put file
 
 ```bash
     python barcode_parser.py -h 
@@ -34,8 +34,8 @@ optional arguments:
   -o O                out put file
 ```
 ### header of output 
-    + `barcodeID` unique barcode id 
-    + `barcodesequence` barcode sequence
-    + `barcodeCount` the number of barcode sequence been sequenced
-    + `sgRNAsequence` sgRNA sequence
-    + `sgRNACount` the number of sgRNA sequence  been sequenced
+1. `barcodeID` unique barcode id 
+2. `barcodesequence` barcode sequence
+3. `barcodeCount` the number of barcode sequence been sequenced
+4. `sgRNAsequence` sgRNA sequence
+5. `sgRNACount` the number of sgRNA sequence  been sequenced
