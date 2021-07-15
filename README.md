@@ -4,7 +4,7 @@
  * @Author: zpliu
  * @Date: 2021-07-15 21:41:28
  * @LastEditors: zpliu
- * @LastEditTime: 2021-07-15 22:29:11
+ * @LastEditTime: 2021-07-15 22:35:58
  * @@param: 
 -->
 # BarcodeParse
@@ -15,8 +15,8 @@ Parsing the barcode sequences in CRISPR-Case9 system  using Next-generation sequ
 
 1. `-R1` R1 fastq sequence file (gizped or uncompressed)
 2. `-R2` R2 fastq sequence file (gizped or uncompressed)
-3. `-verctor5` verctor sequence adjacent to 5' barcode (default='TATAAGCGAAAGAAGCATCAGATGGGCAAACAAAGCACCAGTGGTCTAGTGGTAGAATAGTACCCTGCCACGGTACAGACCCGGGTTCGATTCCCGGCTGGTGCA')
-4. `-verctor3` verctor sequence adjacent to 3' barcode (default='TAAAATAAGGCTAGTCCGTTATCAACTTGAAAAAGTGGCACCGAGTCGGTGCTTTTTTGTTTTAGAGCTAGAAATAGCAAGTTAAAATAAGGCTAGTCCGTTTTTAGCGCGTGCATGCCTGCAGGTCCACAAATTCGGGTC')
+3. `-vector5` vector sequence adjacent to 5' barcode (default='TATAAGCGAAAGAAGCATCAGATGGGCAAACAAAGCACCAGTGGTCTAGTGGTAGAATAGTACCCTGCCACGGTACAGACCCGGGTTCGATTCCCGGCTGGTGCA')
+4. `-vector3` vector sequence adjacent to 3' barcode (default='TAAAATAAGGCTAGTCCGTTATCAACTTGAAAAAGTGGCACCGAGTCGGTGCTTTTTTGTTTTAGAGCTAGAAATAGCAAGTTAAAATAAGGCTAGTCCGTTTTTAGCGCGTGCATGCCTGCAGGTCCACAAATTCGGGTC')
 5. `-o` out put file
 
 ```bash
@@ -29,7 +29,7 @@ optional arguments:
   -h, --help          show this help message and exit
   -R1 R1              R1 sequence file
   -R2 R2              R2 sequence file
-  -verctor5 VERCTOR5  verctor sequence adjacent to 5' barcode
+  -vector5 VERCTOR5  verctor sequence adjacent to 5' barcode
   -verctor3 VERCTOR3  verctor sequence adjacent to 3' barcode
   -o O                out put file
 ```
@@ -42,5 +42,5 @@ optional arguments:
 
 ```bash
  #example 
- python barcode_parser.py -R1 testData/test_R1.fastq -R2 testData/test_R2.fastq -verctor5 GCGAAAGAAGCATCAGATGGGCAAACAAAGCACCAGTGGTCTAGTGGTAGAATAGTACCCTGCCACGGTACAGACCCGGGTTCGATTCCCGGCTGGTGCA -verctor3 GTTTTAGAGCTAGAAATAGCAAGTTAAAATAAGGCTAGTCCGTTATCAACTTGAAAAAGTGGCACCGAGTCGGTGCTTTTTTGTTTTAGAGCTAGAAATAGCAAGTTAAAATAAGGCTAGTCCGTTTTTAGCGCGTGCATGCCTGCAGGTCCACAAATTCGGGTC -o testData/sgRNA_count.txt
+ python barcode_parser.py -R1 testData/test_R1.fastq -R2 testData/test_R2.fastq -vector5 GCGAAAGAAGCATCAGATGGGCAAACAAAGCACCAGTGGTCTAGTGGTAGAATAGTACCCTGCCACGGTACAGACCCGGGTTCGATTCCCGGCTGGTGCA -vector3 GTTTTAGAGCTAGAAATAGCAAGTTAAAATAAGGCTAGTCCGTTATCAACTTGAAAAAGTGGCACCGAGTCGGTGCTTTTTTGTTTTAGAGCTAGAAATAGCAAGTTAAAATAAGGCTAGTCCGTTTTTAGCGCGTGCATGCCTGCAGGTCCACAAATTCGGGTC -o testData/sgRNA_count.txt
 ```

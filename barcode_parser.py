@@ -4,7 +4,7 @@ version:
 Author: zpliu
 Date: 2021-07-15 20:29:47
 LastEditors: zpliu
-LastEditTime: 2021-07-15 22:27:39
+LastEditTime: 2021-07-15 22:36:53
 @param: 
 '''
 import pandas as pd
@@ -95,9 +95,9 @@ if __name__=="__main__":
     parser=argparse.ArgumentParser()
     parser.add_argument('-R1',help='R1 sequence file')
     parser.add_argument('-R2',help='R2 sequence file')
-    parser.add_argument('-verctor5',help='verctor sequence adjacent to 5\' barcode',
+    parser.add_argument('-vector5',help='verctor sequence adjacent to 5\' barcode',
     default='TATAAGCGAAAGAAGCATCAGATGGGCAAACAAAGCACCAGTGGTCTAGTGGTAGAATAGTACCCTGCCACGGTACAGACCCGGGTTCGATTCCCGGCTGGTGCA')
-    parser.add_argument('-verctor3',help='verctor sequence adjacent to 3\' barcode',
+    parser.add_argument('-vector3',help='verctor sequence adjacent to 3\' barcode',
     default='TAAAATAAGGCTAGTCCGTTATCAACTTGAAAAAGTGGCACCGAGTCGGTGCTTTTTTGTTTTAGAGCTAGAAATAGCAAGTTAAAATAAGGCTAGTCCGTTTTTAGCGCGTGCATGCCTGCAGGTCCACAAATTCGGGTC')
     parser.add_argument('-o',help='out put file')
     
@@ -133,7 +133,7 @@ if __name__=="__main__":
     #########################################
     # regular expression
     #########################################
-    searchParrernStr='[ATCG]*([ATCG]{}{}.*{}[ATGC]{})[ATCG]*'.format('{9}',args.verctor5,args.verctor3,'{6}')
+    searchParrernStr='[ATCG]*([ATCG]{}{}.*{}[ATGC]{})[ATCG]*'.format('{9}',args.vector5,args.vector3,'{6}')
     # print(searchParrernStr)
     #! search barcode sequence
     barcodePattern=re.compile(searchParrernStr)
@@ -147,7 +147,7 @@ if __name__=="__main__":
             #! barcode sequence
             barcode=sequence[0:9]+"-"+reversed_sequence(sequence)[0:6]
             #! sgRNA sequence
-            sgRNAstart=9+len(args.verctor5)
+            sgRNAstart=9+len(args.vector5)
             sgRNA=sequence[sgRNAstart:sgRNAstart+20] 
             barcodesequence.append((barcode,sgRNA))
         else:
