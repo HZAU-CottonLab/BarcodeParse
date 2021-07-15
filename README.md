@@ -4,7 +4,7 @@
  * @Author: zpliu
  * @Date: 2021-07-15 21:41:28
  * @LastEditors: zpliu
- * @LastEditTime: 2021-07-15 21:53:37
+ * @LastEditTime: 2021-07-15 22:29:11
  * @@param: 
 -->
 # BarcodeParse
@@ -39,3 +39,8 @@ optional arguments:
 3. `barcodeCount` the number of barcode sequence been sequenced
 4. `sgRNAsequence` sgRNA sequence
 5. `sgRNACount` the number of sgRNA sequence  been sequenced
+
+```bash
+ #example 
+ python barcode_parser.py -R1 testData/test_R1.fastq -R2 testData/test_R2.fastq -verctor5 GCGAAAGAAGCATCAGATGGGCAAACAAAGCACCAGTGGTCTAGTGGTAGAATAGTACCCTGCCACGGTACAGACCCGGGTTCGATTCCCGGCTGGTGCA -verctor3 GTTTTAGAGCTAGAAATAGCAAGTTAAAATAAGGCTAGTCCGTTATCAACTTGAAAAAGTGGCACCGAGTCGGTGCTTTTTTGTTTTAGAGCTAGAAATAGCAAGTTAAAATAAGGCTAGTCCGTTTTTAGCGCGTGCATGCCTGCAGGTCCACAAATTCGGGTC -o testData/sgRNA_count.txt
+```

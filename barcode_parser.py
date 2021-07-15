@@ -4,7 +4,7 @@ version:
 Author: zpliu
 Date: 2021-07-15 20:29:47
 LastEditors: zpliu
-LastEditTime: 2021-07-15 21:21:52
+LastEditTime: 2021-07-15 22:27:39
 @param: 
 '''
 import pandas as pd
@@ -138,7 +138,7 @@ if __name__=="__main__":
     #! search barcode sequence
     barcodePattern=re.compile(searchParrernStr)
     containBarcodeSequence=mergeSequence.apply(
-        lambda x: x['seq_x']+x['seq_y'] if barcodePattern.match(x['seq_x']+x['seq_y']) else None ,
+        lambda x: barcodePattern.match(x['seq_x']+x['seq_y'])[1] if barcodePattern.match(x['seq_x']+x['seq_y']) else None ,
         axis=1)
     barcodesequence=[]
     logger.info("count the barcode numbers")
@@ -147,7 +147,8 @@ if __name__=="__main__":
             #! barcode sequence
             barcode=sequence[0:9]+"-"+reversed_sequence(sequence)[0:6]
             #! sgRNA sequence
-            sgRNA=sequence[114:134] 
+            sgRNAstart=9+len(args.verctor5)
+            sgRNA=sequence[sgRNAstart:sgRNAstart+20] 
             barcodesequence.append((barcode,sgRNA))
         else:
             pass
