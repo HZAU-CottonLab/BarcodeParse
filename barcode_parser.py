@@ -4,7 +4,7 @@ version:
 Author: zpliu
 Date: 2021-07-15 20:29:47
 LastEditors: zpliu
-LastEditTime: 2021-07-15 22:36:53
+LastEditTime: 2021-08-04 16:09:10
 @param: 
 '''
 import pandas as pd
@@ -69,7 +69,7 @@ def fastq2fasta(fastqFile, reversedSeq=False):
     for line in File:
         if index % 4 == 0:
           #! sequence Id
-            sequenceId = "".join(line.split(" ")[0].split(":")[-3:])
+            sequenceId = "".join(re.split(r"/[12]",line.split(" ")[0])[0])
             index += 1
         elif index % 4 == 1:
             #! sequence line
@@ -145,7 +145,10 @@ if __name__=="__main__":
     for sequence in containBarcodeSequence:
         if sequence:
             #! barcode sequence
-            barcode=sequence[0:9]+"-"+reversed_sequence(sequence)[0:6]
+            try:
+                barcode=sequence[0:9]+"-"+reversed_sequence(sequence)[0:6]
+            except KeyError:
+                print(sequence)
             #! sgRNA sequence
             sgRNAstart=9+len(args.vector5)
             sgRNA=sequence[sgRNAstart:sgRNAstart+20] 
