@@ -4,12 +4,21 @@
  * @Author: zpliu
  * @Date: 2021-07-15 21:41:28
  * @LastEditors: zpliu
- * @LastEditTime: 2021-07-15 22:35:58
+ * @LastEditTime: 2021-08-06 09:56:15
  * @@param: 
 -->
 # BarcodeParse
 Parsing the barcode sequences in CRISPR-Case9 system  using Next-generation sequencing
 
+### required environment
+
+1. Python => 3.6
+2. pandas 
+3. numpy 
+
+### Schematic diagram
+
+![Schematic diagram](https://z3.ax1x.com/2021/08/06/fmM8d1.png)
 
 ### paraments:
 
